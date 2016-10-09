@@ -1,0 +1,191 @@
+body {
+    padding-top: 50px;
+}
+.main-template {
+    padding: 40px 15px;
+    font-size: 18px;
+}
+
+.row {
+    margin-bottom: 0px;
+}
+.mycell {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.boldcell {
+    font-weight: 700;
+}
+
+.squadracont {
+    background-color: #eee;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.mycol {
+    margin-top:10px;
+}
+
+.squadracont h1 {
+    margin-top: 0px;
+}
+
+.squadracont .row {
+    margin-bottom: 5px;
+}
+
+.partitatitle {
+    text-align: center;
+}
+
+.partitasquadra {
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.partitasquadra h3 {
+    text-align: center;
+    font-weight: 800;
+}
+
+.partitacentro {
+    text-align: center;
+}
+
+#splashscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    overflow: hidden;
+}
+
+#splashscreen img {
+    width: inherit;
+    height: inherit;
+}
+
+
+.bs-callout {
+    margin: 20px 0;
+    padding: 15px 30px 15px 15px;
+    border-left: 5px solid #eee;
+}
+.bs-callout h4 {
+    margin-top: 0;
+}
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+    background-color: #fff;
+}
+
+/* Themes for different contexts */
+.bs-callout-danger {
+    background-color: #fcf2f2;
+    border-color: #dFb5b4;
+}
+.bs-callout-warning {
+    background-color: #fefbed;
+    border-color: #f1e7bc;
+}
+.bs-callout-info {
+    background-color: #f0f7fd;
+    border-color: #d0e3f0;
+}
+
+.bs-callout-danger h4 {
+    color: #B94A48;
+}
+
+.bs-callout-warning h4 {
+    color: #C09853;
+}
+
+.bs-callout-info h4 {
+    color: #3A87AD;
+}
+
+.messaggio-container {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.messaggio-editor {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.ospite-messaggi-container {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.ospite-container {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.singolo-messaggio {
+    margin-left: 0px;
+    margin-bottom: 3px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.no-margin-right {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.no-margin-left {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.no-margin-updown {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.custom-font {
+    font-family: "Verdana", sans-serif;
+}
+
+.flat-button {
+    display: inline-block;
+    border-radius: 0px;
+    border: 0;
+    font-family: "Verdana", sans-serif;
+    font-weight: 600;
+    font-size: 85%;
+    opacity: 0.85;
+}
+
+.blank-space {
+    margin: 0 20px;
+}
+
+.space-top {
+    margin-top: 15px;
+}
+
+

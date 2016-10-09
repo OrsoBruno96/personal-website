@@ -1,0 +1,87 @@
+function sfoglia_copertina(obj) {
+  var img = obj.data('img');
+  var lnk = obj.data('lnk');
+  var tit = obj.data('tit');
+  var txt = obj.data('txt');
+  var copeimg = $('#dlslider .copeimg'); 
+  $('#dlslider li.on').removeClass('on');
+  obj.addClass('on');
+  copeimg.children('img').fadeOut('fast',function() {
+    $(this).attr('src',img).one('load',function() {
+      $(this).fadeIn();
+      copeimg.data('lnk',lnk);
+      copeimg.find('.copetit').text(tit);
+      copeimg.find('.copetxt').text(txt);
+    });
+  });  
+}
+
+function goto_id(elemid) {
+  $('html, body').animate({ scrollTop: $('#'+elemid).offset().top }, 1000);  
+}
+
+// funzioni per file audio
+function audio_play(id) {
+  mrw_layer('/if-audioplay.php?id='+id,400,116);
+}
+function audio_scarica(item) {
+  location.href = '/scarica/'+item+'.html';    
+}
+
+// Document Ready
+$(function(){
+
+  // Apro il menu di sezione
+  $('#sezmenu').hover(
+    function() { $('.popnav',this).show(); },
+    function() { $('.popnav',this).hide(); }
+  );
+
+  // Apro il dettaglio dei box in home
+  $('.hbox a:not(.t), .hbox .h span').hover(
+    function() { 
+      var hbox = $(this).parents('.hbox');
+      hbox.children('.t').css({ 'border-color': '#FF6600' });      
+      hbox.find('.h').show();
+    },
+    function() {
+      var hbox = $(this).parents('.hbox');
+      hbox.children('.t').css({ 'border-color': '#DDDDDD' });      
+      hbox.find('.h').hide();
+    }
+  );
+    
+  // contenuti a Tab
+  $('.tabbed').find('.tab_opener:first').addClass('sel');
+  $('.tabbed').find('.tab_content:not(:first)').hide();
+  $('.tab_opener').click(function(){
+    var group = $(this).parents('.tabbed');
+    var cont = $(this).data('cont');
+    $(this).addClass('sel');
+    $('#' + cont).show();
+    group.find('.tab_opener').not(this).removeClass('sel');
+    group.find('.tab_content').not('#' + cont).hide();
+  });
+  
+  // gestisco i tooltip
+  $('#postnav li').hover(
+    function() { $('span',this).show(); },
+    function() { $('span',this).hide(); }
+  );
+
+  // download e demo
+  $('.act-scarica,.act-demo').click(function(){
+    var item = $(this).data('item');
+    var act = $(this).hasClass('act-scarica') ? 'scarica' : 'demo';
+    var noframe = $(this).data('noframe');
+    var goto = '/'+act+'/'+item+'.html'
+    if (noframe == 1) window.open(goto); else location.href = goto;
+  });
+  
+  // segnala errore (download)
+  $(".act-segnala-errore").click(function(){
+    var item = $(this).data('item');
+    mrw_layer('/if-modulo.php?do=errore&item='+item,600,360);
+  });
+
+});

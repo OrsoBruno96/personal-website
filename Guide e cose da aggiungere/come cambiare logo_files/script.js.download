@@ -1,0 +1,120 @@
+function iscriviti_nl(titolo,news) {
+  document.write('<form method="post" action="http://utenti.mrwebmaster.it/registrazione-profilo.php?' + (news == true ? 'nl_news' : 'nl_ilmeglio') + '=1" style="margin: 10px 0; padding: 0"><input type="hidden" name="sito_id" value="1"/>');
+  document.write('<div style="background: #878787; color: #FFFFFF; padding: 4px;">' + titolo + '</div>');
+  document.write('<div style="height: 70px; background: url(\'http://www.mrwebmaster.it/images/boxnl_sfondo.jpg\') no-repeat;"><div style="padding: 16px 16px 0 16px"><table border="0" cellspacing="0" cellpadding="0"><tr>');
+  document.write('<td style="padding-right: 10px;"><input type="text" name="email" placeholder="Tua email..." style="width: 180px; font-size: 18px; border: 1px solid #DDDDDD; color: #CCCCCC"/></td>');
+  document.write('<td style="padding-right: 10px;"><input type="image" src="http://www.mrwebmaster.it/images/boxnl_bt.jpg" style="display:block;"/></td>');
+  document.write('<td><span style="font-size: 12px;">Non riceverai SPAM e potrai cancellarti in ogni momento. Leggi la nostra <a href="http://www.mrwebmaster.it/info/privacy.html" target="_blank">privacy policy</a>.</span></td>');  
+  document.write('</tr></table></div></div></form>');  
+}
+
+function mrw_loadjs(jsurl) {
+  var addjs = document.createElement('script'); addjs.type = 'text/javascript'; addjs.async = true; addjs.src = jsurl;
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(addjs);        
+}
+
+function mrw_errore(msg) {
+  $.ambiance({
+    title: 'Errore',
+    message: msg, 
+    type: 'error',
+    timeout: 4
+  });  
+}
+
+function mrw_successo(msg) {
+  $.ambiance({
+    title: 'Complimenti',
+    message: msg, 
+    type: 'success',
+    timeout: 4
+  });  
+}
+
+function mrw_layer(iframe,w,h) {
+  var t = parseInt(($(window).height()-h)/2);
+  var l = parseInt(($(window).width()-w)/2);
+  var css = 'http://www.mrwebmaster.it/common-css/openwin.css';
+  $('head').append('<link rel="stylesheet" type="text/css" href="'+css+'" media="all"/>');
+  var inject = '<div id="openwin" style="display:none;">'
+             + '  <div class="mc-inner" style="width:'+w+'px;height:'+h+'px;margin:'+t+'px 0 0 '+l+'px;">'
+             + '    <span class="mc-close" onclick="$(\'#openwin\').remove();">CHIUDI</span>'
+             + '    <iframe src="'+iframe+'" style="width:'+w+'px;height:'+h+'px;"></iframe>'                                                         
+             + '  </div>'
+             + '</div>'
+             + '<scr'+'ipt>'
+             + '$(\'#openwin\').fadeIn();'
+             + '</scr'+'ipt>';
+  $('body').append(inject);
+}
+
+// Funzioni per i cookie
+
+function crea_cookie(nome, val, gg) {
+  if (gg) {
+    var dt = new Date();
+    dt.setTime(dt.getTime() + (gg * 24 * 60 * 60 * 1000));
+    var expires = "; expires=" + dt.toGMTString();
+  } else var expires = ""; 
+  document.cookie = escape(nome) + "=" + escape(val) + expires + "; domain=.mrwebmaster.it; path=/";
+}
+
+function leggi_cookie(nome) {
+  var nameEQ = escape(nome) + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return unescape(c.substring(nameEQ.length, c.length));
+  }
+  return null;
+}
+
+// Document Ready
+$(function(){
+
+  // aggiusto il posizionamento del popup didattica
+  $('#bignav .ddpop').css({ 'left': '-' + $('#bignav .home').outerWidth() + 'px' });
+  
+  // Apro il menu
+  $('.popnavopener').hover(
+    function() { $('.popnav',this).show(); },
+    function() { $('.popnav',this).hide(); }
+  );
+
+  // blocco la postbar (solo www) e il banner
+  if(jQuery().waypoint) {
+    $('#postbarfix,#ultimobanner').waypoint(function(d) {
+      var postbar = ($(this).attr('id') == 'postbarfix' ? true : false);
+      var cls = (postbar == true ? 'stickyzero' : 'sticky');
+      if (d == "down") {
+        $(this).addClass(cls);
+        if (postbar == true) {
+          $(this).removeClass('std');
+          $('#postbar').addClass('shadow bgbianco');
+          $('#post').attr('class','barfix');
+        }
+      }else{
+        $(this).removeClass(cls);
+        if (postbar == true) {
+          $(this).addClass('std');
+          $('#postbar').removeClass('shadow');
+          $('#post').attr('class','std');
+        }
+      }     
+    });
+  }
+
+  // Ricerca
+  $('#bigsearch .click').click(function(){
+    $(this).parent('form').submit(); 
+  });
+  
+  // <LI> Click
+  $('.liclick li a').click(function(e){ e.preventDefault(); });
+  $('.liclick li').click(function(e){
+    var goto = $(this).find('a:first').attr('href');
+    location.href = goto;
+  });
+    
+});

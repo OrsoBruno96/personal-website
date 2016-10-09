@@ -1,0 +1,5 @@
+
+function messagesToggle (ospiteid) {
+    $('.messages-toggle-' + ospiteid).toggle(1000);
+}
+

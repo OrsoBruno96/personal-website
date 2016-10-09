@@ -1,0 +1,7 @@
+Per dare i permessi di scrittura su file al server è necessario dare i 
+permessi all'utente www-data
+
+Il comando bash è fs sa -d <cartella da mettere permessi> -acl www-data rlwi
+
+rlwi è tipo leggi lista scrivi aggiungi e poi boh. Per vedere se funziona anche il resto digita 
+fs listacl
