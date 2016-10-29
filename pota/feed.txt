@@ -5,3 +5,5 @@
 		Ciao Fabio, complimenti per il lavoro prezioso e ben fatto. Un piccolo suggerimento che nulla a vedere con la fisica... gli accenti in lingua italiana sono tutti gravi (è, à, ò, ù, ì), tranne sulla e di perché, poiché... Dai un occhio a come farli in Latex. Grazie ciao. 
 		
 		
+		
+		
