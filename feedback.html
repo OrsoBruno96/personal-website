@@ -1,91 +1,58 @@
 <html>
-<head>
-	<title>
-	Lascia un feedback	</title>
-	
-	<meta charset="utf-8" />
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
-	
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<link rel="stylesheet" href="style.css" />
-	<link rel ="icon" href="bruno_in_bici.ico"/>
-</head>
-<body>
-
-
-
-<div class="container">
-
-        <nav class="navbar navbar-inverse">
+  <head>
+    <title>Lascia un feedback</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />  
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+    <link rel ="icon" href="bruno_in_bici.ico"/>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-        <div class="navbar-header">
+          <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-        <a class="navbar-brand" href="index.php"></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-        <li><a href="index.html">Home</a></li><li><a href="aboutme.html">Su di me</a></li><li><a href="univers.html">Università</a></li><li><a href="olimpiadi_fisica.html">Olimpiadi di Fisica</a></li><li><a href="tempo_libero.html">Tempo libero</a></li>        </ul>
-        </div><!--/.nav-collapse -->
+            <a class="navbar-brand" href="index.php"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li><li><a href="aboutme.html">Su di me</a></li><li><a href="univers.html">Università</a></li><li><a href="olimpiadi_fisica.html">Olimpiadi di Fisica</a></li><li><a href="tempo_libero.html">Tempo libero</a></li>        </ul>
+          </div><!--/.nav-collapse -->
         </div><!-- /.container-fluid -->
-        </nav>
-    
-<div class="page-header">
-    <h1>Lascia un feedback</h1>
-</div>
-
-<form class="form-horizontal" action="grazie_per_il_commento.php" enctype="text/plain" method="get">
-  <legend>Ti sono piaciute le dispense?</legend>
-  
-  <p> C'è ancora molto lavoro da fare, le dispense sono incomplete e ci vorrà un sacco di tempo per finirle. Per sapere se sto facendo un buon lavoro o devo cambiare metodo, mi piacerebbe che chi legge le dispense poi lasciasse un commento qui sotto. 
- Potete anche scrivere "Le tue dispense fanno schifo", non mi offendo, l'importante è che scriviate "Le tue dispense fanno schifo perché... e.g. la parte di Meccanica è incomprensibile". 
- </p>
-  
-<div class="form-group">
-           
-        <label for="id_commento">Spazio per il commento</label>
-		
-		<br>
-		
-		<textarea name="commento" id="id_commento" cols="100" rows="5"> 
-		
-		
-		</textarea>
-		
-		
-    <!--    <div class=" col-sm-10 col-lg-10 ">
-            <input id="id_commento" maxlength="2000" name="commento" type="text" size="120" required="">
-        </div> -->
-</div>
-  
-
-  <div class="form-group">
-    <div class="col-sm-10 col-sm-offset-2">
-      <button type="submit" class="btn btn-success">Invia il commento</button>
-      <a role="button" class="btn btn-primary" href="olimpiadi_fisica.html">Annulla</a>
-      
-    </div>
-  </div>
-
-
-
-
-  
-  
-  </form>
-
-
-</div><!-- /.container-fluid -->
-
-</body>
+      </nav>
+      <div class="page-header">
+        <h1>Lascia un feedback</h1>
+      </div>
+      <form class="form-horizontal" action="grazie_per_il_commento.php" enctype="text/plain" method="get">
+        <legend>Ti sono piaciute le dispense?</legend>        
+        <p> C'è ancora molto lavoro da fare, le dispense sono incomplete e ci vorrà un sacco di tempo per finirle. Per sapere se sto facendo un buon lavoro o devo cambiare metodo, mi piacerebbe che chi legge le dispense poi lasciasse un commento qui sotto. 
+          Potete anche scrivere "Le tue dispense fanno schifo", non mi offendo, l'importante è che scriviate "Le tue dispense fanno schifo perché... e.g. la parte di Meccanica è incomprensibile". 
+        </p>
+        <div class="form-group">
+          <label for="id_commento">Spazio per il commento</label>
+	  <br>
+	  <textarea name="commento" id="id_commento" cols="100" rows="5"> 
+	  </textarea>
+          <!--    <div class=" col-sm-10 col-lg-10 ">
+                  <input id="id_commento" maxlength="2000" name="commento" type="text" size="120" required="">
+          </div> -->
+        </div>
+        <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-2">
+            <button type="submit" class="btn btn-success">Invia il commento</button>
+            <a role="button" class="btn btn-primary" href="olimpiadi_fisica.html">Annulla</a>
+          </div>
+        </div>
+      </form>
+    </div><!-- /.container-fluid -->
+  </body>
 </html>
