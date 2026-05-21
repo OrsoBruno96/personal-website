@@ -1,0 +1,11 @@
+---
+import HomePage from "../../components/HomePage.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getDictionary } from "../../i18n";
+
+const dictionary = getDictionary("en");
+---
+
+<BaseLayout dictionary={dictionary} locale="en" assetBase="..">
+  <HomePage dictionary={dictionary} locale="en" assetBase=".." />
+</BaseLayout>

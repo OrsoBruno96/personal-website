@@ -1,0 +1,291 @@
+---
+import type { Dictionary, Locale } from "../i18n";
+
+interface Props {
+  dictionary: Dictionary;
+  locale: Locale;
+  assetBase: string;
+}
+
+const { dictionary, locale, assetBase } = Astro.props;
+const isItalian = locale === "it";
+const year = new Date().getFullYear();
+const asset = (path: string) => `${assetBase}${path}`;
+const localeSwitchHref = isItalian ? "./en/" : "../";
+const localeSwitchLabel = isItalian
+  ? dictionary.languageSwitcher.english
+  : dictionary.languageSwitcher.italian;
+---
+
+<div id="preloader">
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span id="navbar-title">{dictionary.site.title}</span>
+    </a>
+    <button
+      class="navbar-toggler navbar-toggler-right"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label={dictionary.nav.toggleLabel}
+    >
+      {dictionary.nav.menu}
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger active" href="#home">{dictionary.nav.home}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">{dictionary.nav.about}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#olifis">{dictionary.nav.physicsOlympics}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#university">{dictionary.nav.university}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#starfleet">{dictionary.nav.starfleet}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#fibonhack">{dictionary.nav.fibonhack}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#freetime">{dictionary.nav.freeTime}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href={localeSwitchHref} hreflang={isItalian ? "en" : "it"}>
+            {localeSwitchLabel}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="home" class="ct-header ct-header--slider ct-slick-custom-dots">
+  <div class="ct-slick-homepage" data-arrows="true" data-autoplay="false">
+    <div class="ct-header tablex item" data-background={asset("/images/kazakhstan.jpg")}>
+      <div class="ct-u-display-tablex">
+        <div class="inner">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-lg-8 slider-inner">
+                <h1 class="big animated">{dictionary.hero.phd.title}</h1>
+                <p class="animated">{dictionary.hero.phd.body}</p>
+                <a class="btn-new from-middle animated" href={asset("/uploads/cv_fabio_zoratti.pdf")}>
+                  {dictionary.hero.phd.cta}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ct-header tablex item" data-background={asset("/images/st.jpg")}>
+      <div class="ct-u-display-tablex">
+        <div class="inner">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-lg-8 slider-inner">
+                <h1 class="big animated">{dictionary.hero.sysadmin.title}</h1>
+                <p class="animated">{dictionary.hero.sysadmin.body1}</p>
+                <p class="animated">{dictionary.hero.sysadmin.body2}</p>
+                <a class="btn-new from-middle animated" href={asset("/uploads/cv_fabio_zoratti.pdf")}>
+                  {dictionary.hero.sysadmin.cta}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about" class="section wb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="message-box">
+          <h2>{dictionary.about.title}</h2>
+          <p set:html={dictionary.about.paragraph1Html}></p>
+          <p>{dictionary.about.paragraph2}</p>
+          <p set:html={dictionary.about.paragraph3Html}></p>
+
+          <ul>
+            <li><b>{dictionary.about.followMe}</b></li>
+            <li><a href="https://www.facebook.com/fabio.zoratti" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://it.linkedin.com/in/fabio-zoratti-980386123" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UC-IQlTD8uhrZbeKRppszqmg" aria-label="YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+            <li><a href="https://github.com/OrsoBruno96" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+            <li><a href="https://gitlab.com/OrsoBruno96" aria-label="GitLab"><i class="fa fa-gitlab" aria-hidden="true"></i></a></li>
+            <li><a href="https://scholar.google.com/citations?user=qb-67k8AAAAJ&hl=it" aria-label="Google Scholar"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li>
+          </ul>
+
+          <a class="btn-new from-middle animated" href={asset("/uploads/cv_fabio_zoratti.pdf")}>
+            {dictionary.about.cta}
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="right-box-pro wow fadeIn">
+          <img
+            src={asset("/images/fabio_fototessera.jpg")}
+            alt={dictionary.about.photoAlt}
+            class="img-fluid img-rounded fat-ab"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="olifis" class="section lb">
+  <div class="container">
+    <div class="section-title text-center">
+      <h3>{dictionary.physicsOlympics.title}</h3>
+      <p>{dictionary.physicsOlympics.intro1}</p>
+      <p>{dictionary.physicsOlympics.intro2}</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="services-inner-box">
+          <div class="ser-icon">
+            <i class="fa fa-book"></i>
+          </div>
+          <h2>{dictionary.physicsOlympics.notes.title}</h2>
+          <p set:html={dictionary.physicsOlympics.notes.bodyHtml}></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="services-inner-box">
+          <div class="ser-icon">
+            <i class="fa fa-briefcase"></i>
+          </div>
+          <h2>{dictionary.physicsOlympics.stage.title}</h2>
+          <p set:html={dictionary.physicsOlympics.stage.bodyHtml}></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="services-inner-box">
+          <div class="ser-icon">
+            <i class="fa fa-users"></i>
+          </div>
+          <h2>{dictionary.physicsOlympics.teamCompetition.title}</h2>
+          <p set:html={dictionary.physicsOlympics.teamCompetition.bodyHtml}></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="university" class="section lb">
+  <div class="container">
+    <div class="section-title text-center">
+      <h3>{dictionary.university.title}</h3>
+      <p>{dictionary.university.paragraph1}</p>
+      <p set:html={dictionary.university.paragraph2Html}></p>
+    </div>
+  </div>
+</div>
+
+<div id="starfleet" class="section wb">
+  <div class="container">
+    <div class="section-title text-center">
+      <h3>{dictionary.starfleet.title}</h3>
+      <p>{dictionary.starfleet.intro}</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="testi-carousel owl-carousel owl-theme">
+          {dictionary.starfleet.cards.map((card) => (
+            <div class="testimonial clearfix">
+              <div class="desc">
+                <h3>{card.title}</h3>
+                <p class="lead">{card.body}</p>
+              </div>
+              <div class="testi-meta">
+                <img src={asset(card.image)} alt={card.imageAlt} class="img-fluid" />
+                <h4>{card.label}</h4>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="fibonhack" class="section lb">
+  <div class="container">
+    <div class="section-title text-center">
+      <h3>{dictionary.fibonhack.title}</h3>
+      <p set:html={dictionary.fibonhack.bodyHtml}></p>
+      <br />
+      <div>
+        <img
+          id="fibonhack-logo"
+          src={asset("/images/fibonhack.png")}
+          alt={dictionary.fibonhack.logoAlt}
+          class="img-fluid img-rounded fat-ab"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="freetime" class="section wb">
+  <div class="container">
+    <div class="section-title text-center">
+      <h3>{dictionary.freeTime.title}</h3>
+      <p>{dictionary.freeTime.intro}</p>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <div>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/JgcnkWZ2uU4"
+          title={dictionary.freeTime.videoTitle}
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <p>{dictionary.freeTime.videoCaption}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="copyrights">
+  <div class="container">
+    <div class="footer-distributed">
+      <div class="footer-left">
+        <p class="footer-company-name">
+          CC. &copy; {year} <a href="#">Fabio Zoratti</a> {dictionary.footer.designBy} :
+          <a href="https://html.design/">html design</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
