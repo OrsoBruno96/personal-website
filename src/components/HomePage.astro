@@ -11,7 +11,7 @@ const { dictionary, locale, assetBase } = Astro.props;
 const isItalian = locale === "it";
 const year = new Date().getFullYear();
 const asset = (path: string) => `${assetBase}${path}`;
-const localeSwitchHref = isItalian ? "./en/" : "../";
+const localeSwitchHref = isItalian ? "../en/" : "../it/";
 const localeSwitchLabel = isItalian
   ? dictionary.languageSwitcher.english
   : dictionary.languageSwitcher.italian;

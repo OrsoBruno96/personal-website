@@ -1,11 +1,38 @@
 ---
-import HomePage from "../components/HomePage.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { getDictionary } from "../i18n";
-
-const dictionary = getDictionary("it");
+const supportedLocales = ["it", "en"] as const;
+const fallbackLocale = "it";
+const redirectTargets = {
+  it: "./it/",
+  en: "./en/"
+} as const;
 ---
 
-<BaseLayout dictionary={dictionary} locale="it" assetBase=".">
-  <HomePage dictionary={dictionary} locale="it" assetBase="." />
-</BaseLayout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content={`0; url=${redirectTargets[fallbackLocale]}`} />
+    <script is:inline define:vars={{ supportedLocales, fallbackLocale, redirectTargets }}>
+      const browserLocales = Array.isArray(navigator.languages) && navigator.languages.length > 0
+        ? navigator.languages
+        : [navigator.language];
+
+      const match = browserLocales
+        .map((value) => String(value || "").toLowerCase())
+        .map((value) => value.split("-")[0])
+        .find((value) => supportedLocales.includes(value));
+
+      const target = redirectTargets[match || fallbackLocale];
+      window.location.replace(target);
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <meta http-equiv="refresh" content={`0; url=${redirectTargets[fallbackLocale]}`} />
+    </noscript>
+    <p>Redirecting...</p>
+  </body>
+</html>

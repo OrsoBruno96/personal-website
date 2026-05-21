@@ -9,7 +9,7 @@ interface Props {
 
 const { dictionary, locale, assetBase } = Astro.props;
 const title = dictionary.site.title;
-const alternateUrl = locale === "it" ? "./en/" : "../";
+const alternateUrl = locale === "it" ? "../en/" : "../it/";
 const alternateLang = locale === "it" ? "en" : "it";
 const asset = (path: string) => `${assetBase}${path}`;
 ---
