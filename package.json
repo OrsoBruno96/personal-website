@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:watch": "watchexec --watch src --watch public --watch astro.config.mjs --watch package.json --watch tsconfig.json --exts astro,ts,mjs,json,css,js,html,png,jpg,jpeg,gif,svg,woff,woff2,ttf,eot,pdf -- npm run build",
     "preview": "astro preview",
     "check": "astro check"
   },
