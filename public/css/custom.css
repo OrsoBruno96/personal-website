@@ -6,3 +6,43 @@
     border-radius: 50%;
     max-width: 50%;
 }
+
+.about-row {
+    align-items: center;
+}
+
+.about-copy {
+    padding-right: 32px;
+}
+
+.about-media {
+    display: flex;
+    justify-content: center;
+    padding-left: 32px;
+}
+
+.about-media .right-box-pro {
+    width: 100%;
+    text-align: center;
+}
+
+.about-photo {
+    display: inline-block;
+    max-width: 360px;
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .about-copy {
+        padding-right: 15px;
+    }
+
+    .about-media {
+        margin-top: 24px;
+        padding-left: 15px;
+    }
+
+    .about-photo {
+        max-width: 300px;
+    }
+}
