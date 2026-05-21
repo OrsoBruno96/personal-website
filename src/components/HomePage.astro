@@ -84,7 +84,7 @@ const localeSwitchLabel = isItalian
           <div class="container">
             <div class="row">
               <div class="col-md-8 col-lg-8 slider-inner">
-                <h1 class="big animated">{dictionary.hero.phd.title}</h1>
+                <h1 class="big animated" set:html={dictionary.hero.phd.title}></h1>
                 <p class="animated">{dictionary.hero.phd.body}</p>
                 <a class="btn-new from-middle animated" href={asset("/uploads/cv_fabio_zoratti.pdf")}>
                   {dictionary.hero.phd.cta}
@@ -119,8 +119,8 @@ const localeSwitchLabel = isItalian
 
 <div id="about" class="section wb">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6">
+    <div class="row about-row align-items-center">
+      <div class="col-md-6 about-copy">
         <div class="message-box">
           <h2>{dictionary.about.title}</h2>
           <p set:html={dictionary.about.paragraph1Html}></p>
@@ -143,12 +143,12 @@ const localeSwitchLabel = isItalian
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6 about-media">
         <div class="right-box-pro wow fadeIn">
           <img
             src={asset("/images/fabio_fototessera.jpg")}
             alt={dictionary.about.photoAlt}
-            class="img-fluid img-rounded fat-ab"
+            class="img-fluid img-rounded fat-ab about-photo"
           />
         </div>
       </div>
@@ -202,6 +202,7 @@ const localeSwitchLabel = isItalian
       <h3>{dictionary.university.title}</h3>
       <p>{dictionary.university.paragraph1}</p>
       <p set:html={dictionary.university.paragraph2Html}></p>
+      <p set:html={dictionary.university.paragraph3Html}></p>
     </div>
   </div>
 </div>

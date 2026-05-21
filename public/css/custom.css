@@ -7,6 +7,26 @@
     max-width: 50%;
 }
 
+.slider-inner h1 a,
+.ct-header h1 a {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 999px;
+    color: #0f2d63;
+    display: inline-block;
+    padding: 0.08em 0.45em;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.slider-inner h1 a:hover,
+.slider-inner h1 a:focus,
+.ct-header h1 a:hover,
+.ct-header h1 a:focus {
+    background: #ffffff;
+    color: #1253b5;
+    text-decoration: none;
+}
+
 .about-row {
     align-items: center;
 }

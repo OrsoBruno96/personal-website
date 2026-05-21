@@ -24,15 +24,15 @@ export const en = {
   },
   hero: {
     phd: {
-      title: "PhD candidate @SNS",
+      title: "Co-Founder @<a href=\"https://platonicresearch.com/\">PlatonicResearch</a>",
       body:
-        "I graduated in Theoretical Physics in 2020 and I now work on Quantum Information at SNS.",
+        "I graduated in Theoretical Physics in 2020, got a PhD in computational methods for quantum information and now work for a startup, while I keep active my Physics Olympiad involvement.",
       cta: "Download CV"
     },
     sysadmin: {
       title: "Linux SysAdmin",
       body1:
-        "I work part-time with the Scuola Normale Superiore as a system administrator.",
+        "I worked for a long time part-time with the Scuola Normale Superiore as a system administrator.",
       body2:
         "Why a photo from a race carrying my college flag? Our work environment is unusual to say the least, and that is one of the reasons I like it so much.",
       cta: "Download CV"
@@ -41,11 +41,11 @@ export const en = {
   about: {
     title: "About me.",
     paragraph1Html:
-      "I am currently a PhD candidate at the Scuola Normale Superiore. I work on Quantum Information as part of the <a href=\"https://qinfo.sns.it/\">large research group</a> within the Scuola Normale.",
+      "I am now co-founder of a <a href=\"https://platonicresearch.com/\">startup</a>, where I work on software development and infrastructure together with other alumni of the Scuola Normale.",
     paragraph2:
       "I was also an undergraduate student at the Scuola Normale Superiore. This means I benefited from a substantial scholarship, but I also had to attend courses at the Scuola Normale while completing my degree at the University of Pisa and maintaining a very high GPA.",
     paragraph3Html:
-      "Since 2017 I have worked part-time with the school, handling administration and maintenance for computer labs and college servers at the Scuola Normale. My team is <a href=\"#starfleet\">Starfleet</a>. In 2020 I became especially interested in cybersecurity and joined the CTF team <a href=\"https://fibonhack.it/\">FibonHack</a>.",
+      "From 2017 to 2024 I worked part-time with the school, handling administration and maintenance for computer labs and college servers at the Scuola Normale. My team is <a href=\"#starfleet\">Starfleet</a>. In 2020 I became especially interested in cybersecurity and joined the CTF team <a href=\"https://fibonhack.it/\">FibonHack</a>.",
     followMe: "Follow me",
     cta: "Download CV",
     photoAlt: "Portrait photo of Fabio Zoratti"
@@ -77,7 +77,9 @@ export const en = {
     paragraph1:
       "In 2018 I earned my bachelor's degree. In the same year I attended a summer school at DESY, the German synchrotron in Hamburg, where I worked for CMS, one of CERN's two main experiments. I focused on data analysis, searching for supersymmetric Higgs bosons.",
     paragraph2Html:
-      "In 2020 I wrote my <a href=\"https://gitlab.com/OrsoBruno96/tesi-magistrale/\">master's thesis</a>, which explores machine-learning-like approaches on quantum computers."
+      "In 2020 I wrote my <a href=\"https://gitlab.com/OrsoBruno96/tesi-magistrale/\">master's thesis</a>, which explores machine-learning-like approaches on quantum computers.",
+    paragraph3Html:
+      "I then continued my studies at the Scuola Normale Superiore. I worked on Quantum Information as part of the <a href=\"https://qinfo.sns.it/\">large research group</a> within the Scuola Normale."
   },
   starfleet: {
     title: "Starfleet",

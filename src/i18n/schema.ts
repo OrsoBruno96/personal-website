@@ -22,15 +22,15 @@ export const it = {
   },
   hero: {
     phd: {
-      title: "PhD candidate @SNS",
+      title: "Co-Founder @<a href=\"https://platonicresearch.com/\">PlatonicResearch</a>",
       body:
-        "Mi sono laureato in Fisica Teorica nel 2020 e adesso mi occupo di Informazione Quantistica in SNS.",
+        "Mi sono laureato in Fisica Teorica nel 2020, ottenuto un dottorato di ricerca in metodi computazionali per quantum information e ora lavoro per una startup, mentre continuo ad occuparmi dell'organizzazione delle Olimpiadi della Fisica.",
       cta: "Scarica CV"
     },
     sysadmin: {
       title: "Linux SysAdmin",
       body1:
-        "Collaboro part-time con la Scuola Normale Superiore come sistemista.",
+        "Ho collaborato a lungo part-time con la Scuola Normale Superiore come sistemista.",
       body2:
         "Perché la foto di una corsa con la bandiera del proprio collegio? Abbiamo un ambiente di lavoro a dir poco singolare, e lo adoro anche per questo.",
       cta: "Scarica CV"
@@ -39,11 +39,11 @@ export const it = {
   about: {
     title: "Chi sono.",
     paragraph1Html:
-      "Ora sono un perfezionando della Scuola Normale Superiore. Mi occupo di Informazione Quantistica, lavorando per il <a href=\"https://qinfo.sns.it/\">folto gruppo</a> all'interno della Scuola Normale.",
+      "Ora sono co-founder di una <a href=\"https://platonicresearch.com/\">startup</a> in cui mi occupo di sviluppo software e infrastruttura, insieme ad altri Normalisti",
     paragraph2:
       "Sono stato un allievo ordinario della Scuola Normale Superiore. Questo vuol dire che dispongo di una sostanziosa borsa di studio ma devo frequentare sia i corsi alla Scuola Normale Superiore, sia laurearmi all'Università di Pisa, mantenendo una media molto alta.",
     paragraph3Html:
-      "Dal 2017 collaboro part-time con la Scuola, occupandomi di amministrazione e manutenzione di aule computer e server dei collegi della Scuola Normale. Il mio team è <a href=\"#starfleet\">Starfleet</a>. Nel 2020 mi sono appassionato particolarmente alla cybersecurity e sono entrato nel CTF team <a href=\"https://fibonhack.it/\">FibonHack</a>.",
+      "Dal 2017 al 2024 ho collaborato part-time con la Scuola, occupandomi di amministrazione e manutenzione di aule computer e server dei collegi della Scuola Normale. Il mio team è <a href=\"#starfleet\">Starfleet</a>. Nel 2020 mi sono appassionato particolarmente alla cybersecurity e sono entrato nel CTF team <a href=\"https://fibonhack.it/\">FibonHack</a>.",
     followMe: "Seguimi",
     cta: "Scarica CV",
     photoAlt: "Foto ritratto di Fabio Zoratti"
@@ -75,7 +75,9 @@ export const it = {
     paragraph1:
       "Nel 2018 ho ottenuto la laurea triennale. Lo stesso anno ho partecipato a una scuola estiva a DESY, il sincrotrone tedesco nella città di Amburgo, lavorando per CMS, uno dei due esperimenti principali del CERN. Mi sono occupato di analisi dati, alla ricerca di bosoni di Higgs supersimmetrici.",
     paragraph2Html:
-      "Nel 2020 ho scritto la mia <a href=\"https://gitlab.com/OrsoBruno96/tesi-magistrale/\">tesi magistrale</a>, che tratta approcci machine-learning-like su computer quantistici."
+      "Nel 2020 ho scritto la mia <a href=\"https://gitlab.com/OrsoBruno96/tesi-magistrale/\">tesi magistrale</a>, che tratta approcci machine-learning-like su computer quantistici.",
+    paragraph3Html: "Mi sono poi perfezionato sempre all Scuola Normale Superiore. Mi sono occupato di Informazione Quantistica, lavorando per il <a href=\"https://qinfo.sns.it/\">folto gruppo</a> all'interno della Scuola Normale."
+
   },
   starfleet: {
     title: "Starfleet",
